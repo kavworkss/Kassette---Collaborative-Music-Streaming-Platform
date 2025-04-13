@@ -21,21 +21,26 @@ function JoinRoom() {
   const [unmountOnClose, setUnmountOnClose] = useState(true);
 
   const toggle = () => setmodal_backdrop1(!modal_backdrop1);
-  const handleJoinRoom=async()=>{
-    const collectionRef=collection(db,'room')
-   const data= await getDoc(doc(db,'room',roomCode))
-   if(data.exists()){
-    sessionStorage.setItem('roomCode',roomCode)
-    setJoineeSong(data.data().currentSong)
-    const members=data.data().members
-    if(!members.includes(Cookies.get('name'))){
-      await updateDoc(doc(db,'room',roomCode),{members:[...data.data().members,Cookies.get('name')]})
+
+
+ const handleJoinRoom = async () => {
+  const roomRef = doc(db, 'room', roomCode);
+  const data = await getDoc(roomRef);
+  if (data.exists()) {
+    sessionStorage.setItem('roomCode', roomCode);
+    setJoineeSong(data.data().currentSong);
+
+    const members = data.data().members || [];
+    const userName = Cookies.get('name');
+    if (!members.includes(userName)) {
+      await updateDoc(roomRef, { members: [...members, userName] });
     }
-   setmodal_backdrop1(!modal_backdrop1)
-   }else{
-    setMsg('Room code is incorrect')
-   }
+
+    setmodal_backdrop1(false);
+  } else {
+    setMsg('Room code is incorrect');
   }
+};
 
   return (
     <Modal centered={true} className='flex justify-center w-72' isOpen={modal_backdrop1} toggle={toggle} unmountOnClose={unmountOnClose}>
@@ -59,5 +64,11 @@ function JoinRoom() {
     </ModalFooter>
   </Modal>
   );
+
+
+
+  
 }
+
+
 export default JoinRoom

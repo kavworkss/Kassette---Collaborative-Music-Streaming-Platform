@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-body{
-  font-family: 'Poppins',sans-serif;
+
+body {
+  font-family: 'Poppins', sans-serif;
 }
+
 .marquee-container {
   overflow: hidden;
 }
 
 .marquee {
   white-space: nowrap;
+  display: inline-block;
   animation: marquee-scroll linear infinite;
 }
 
@@ -24,23 +27,47 @@ body{
 ::-webkit-scrollbar {
   width: 2px;
   height: 4px;
-  border:2px solid #0005;
-  /* border-radius: 15px; Width of the scrollbar */
+  border: 2px solid #0005;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: #0005; /* Color of the scrollbar track */
+  background: #0005;
 }
 
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: #888; /* Color of the scrollbar handle */
-  border-radius: 4px; /* Rounded corners for the handle */
+  background: #888;
+  border-radius: 4px;
 }
 
-/* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color of the scrollbar handle on hover */
+  background: #555;
 }
 
+/* Gradient flowing from left to right */
+@keyframes gradient-flow {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #fff }
+}
+
+.typewriter-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid;
+  display: inline-block;
+}
