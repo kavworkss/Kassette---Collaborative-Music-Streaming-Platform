@@ -1,7 +1,7 @@
 
-# 🎵 Kasette – YouTube Music Sync App
+# 🎵 Kassette – YouTube Music Sync App
 
-**Kasette** is a real-time collaborative music sync web app that allows users to listen to YouTube music videos together in perfect sync. Whether you're miles apart or just want a virtual listening party, Kasette provides shared rooms, synchronized playback, queue management, and real-time chat for the ultimate group music experience.
+**Kassette** is a real-time collaborative music sync web app that allows users to listen to YouTube music videos together in perfect sync. Whether you're miles apart or just want a virtual listening party, Kasette provides shared rooms, synchronized playback, queue management, and real-time chat for the ultimate group music experience.
 
 ---
 
