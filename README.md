@@ -1,66 +1,62 @@
 
-# 🎵 Kassette – YouTube Music Sync App
+# KASSETTE – Collaborative Music Sync Application
 
-**Kassette** is a real-time collaborative music sync web app that allows users to listen to YouTube music videos together in perfect sync. Whether you're miles apart or just want a virtual listening party, Kasette provides shared rooms, synchronized playback, queue management, and real-time chat for the ultimate group music experience.
-
----
-
-## ✨ Features
-
-- 🎧 **Real-time Music Sync** – Synchronized playback of YouTube videos across all connected users
-- 👥 **Room-based Listening** – Users can create and join private rooms with unique codes
-- 🎛️ **Host Controls** – Only the room host can control play, pause, seek, and skip actions
-- 🧭 **Seek Bar Sync** – Seamlessly syncs seek actions across all devices in the room
-- 🎵 **Current Track Info** – Displays the song title, artist, and playback timestamps
-- 🔁 **Skip & Seek** – Skip forward/backward and seek to any point in the track
-- 📝 **User Presence** – See who's in the room with name labels and host indicator
-- 🧠 **Playback Attribution** – Shows who last triggered a playback event
-- ✅ **Smooth UI/UX** – Fully responsive interface with modern design
-- 🍪 **Cookie-based Profile Memory** – Remembers user names using browser cookies
+KASSETTE is a real-time, collaborative music synchronization web application that enables users to listen to YouTube music videos together, no matter where they are. It provides synchronized playback, room-based control, and real-time interaction for a shared music listening experience.
 
 ---
 
-## 🛠️ Tech Stack
+## Features
 
-| Category          | Technologies Used                                      |
-|------------------|--------------------------------------------------------|
-| **Frontend**      | React.js, Tailwind CSS, React Icons, Marquee Text     |
-| **Backend**       | Firebase Realtime Database, Firestore                 |
-| **Authentication**| Cookies (js-cookie) for user persistence              |
-| **Media**         | YouTube IFrame Player API                             |
-| **State Mgmt**    | React Context API                                     |
-| **Hosting**       | (Deployable on Firebase Hosting, Vercel, or Netlify) |
-
----
-
-## 📸 Screenshots
-
-```
-Homepage-
-![image](https://github.com/user-attachments/assets/575f6509-e925-4f6f-9198-718e95defa08)
-![image](https://github.com/user-attachments/assets/4f2fab2d-5a82-4387-b9e8-6715143df987)
-![image](https://github.com/user-attachments/assets/c14702a6-c6f8-403f-b07e-6f027839ea9f)
-![image](https://github.com/user-attachments/assets/70a5a3cc-3f1f-401d-b764-5f15f5ac27f6)
-![image](https://github.com/user-attachments/assets/576cc746-7eb0-437a-8919-edfbed98fa26)
-
-Search-
-![image](https://github.com/user-attachments/assets/920c193c-e33b-44c7-b053-6bd2ab740d29)
-
-Chat-
-![image](https://github.com/user-attachments/assets/1195bc37-5c99-421e-9de3-6b11184b3be8)
-
-Profile-
-![image](https://github.com/user-attachments/assets/e8c669ec-017c-4333-af55-722c32542795)
+- Real-time synchronized playback of YouTube videos across all connected users.
+- Room-based functionality allowing users to create or join rooms with unique codes.
+- Host-controlled playback: only the room host can manage play, pause, seek, and skip actions.
+- Synchronized seek bar that updates in real time across all clients.
+- Displays current track information including title, artist, and playback time.
+- Skip and seek controls to navigate through the video timeline.
+- User presence tracking with real-time room member lists and host identification.
+- Playback attribution to display which user triggered the last playback action.
+- Responsive and modern user interface for optimal experience on various devices.
+- Persistent user identity using cookies to remember names across sessions.
 
 ---
 
-## 🔧 Getting Started
+## Technology Stack
+
+**Frontend**: React.js, Tailwind CSS, React Icons, Marquee Text  
+**Backend**: Firebase Realtime Database, Firestore  
+**Media Integration**: YouTube IFrame Player API  
+**Authentication & State**: React Context API, Cookies (js-cookie)  
+**Hosting**: Compatible with Firebase Hosting, Vercel, or Netlify
+
+---
+
+## Screenshots
+
+Homepage:
+- ![Homepage Screenshot 1](https://github.com/user-attachments/assets/575f6509-e925-4f6f-9198-718e95defa08)
+- ![Homepage Screenshot 2](https://github.com/user-attachments/assets/4f2fab2d-5a82-4387-b9e8-6715143df987)
+- ![Homepage Screenshot 3](https://github.com/user-attachments/assets/c14702a6-c6f8-403f-b07e-6f027839ea9f)
+- ![Homepage Screenshot 4](https://github.com/user-attachments/assets/70a5a3cc-3f1f-401d-b764-5f15f5ac27f6)
+- ![Homepage Screenshot 5](https://github.com/user-attachments/assets/576cc746-7eb0-437a-8919-edfbed98fa26)
+
+Search Page:
+- ![Search Screenshot](https://github.com/user-attachments/assets/920c193c-e33b-44c7-b053-6bd2ab740d29)
+
+Chat:
+- ![Chat Screenshot](https://github.com/user-attachments/assets/1195bc37-5c99-421e-9de3-6b11184b3be8)
+
+Profile:
+- ![Profile Screenshot](https://github.com/user-attachments/assets/e8c669ec-017c-4333-af55-722c32542795)
+
+---
+
+## Getting Started
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/kasette-music-sync.git
-cd kasette-music-sync
+git clone https://github.com/your-username/kassette-music-sync.git
+cd kassette-music-sync
 ```
 
 ### 2. Install dependencies
@@ -69,14 +65,13 @@ cd kasette-music-sync
 npm install
 ```
 
-### 3. Set up Firebase
+### 3. Configure Firebase
 
-- Create a Firebase project
-- Enable Firestore Database and configure the rules
-- Copy your Firebase config and paste it into `firebase-config.js`
+- Create a project in the Firebase console.
+- Enable Firestore Database.
+- Update the Firebase configuration in `firebase-config.js` as follows:
 
-```js
-// firebase-config.js
+```javascript
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
@@ -101,41 +96,42 @@ npm start
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 src/
 │
-├── Components/          # Reusable components (e.g., Sidebar, Player)
-├── Context/             # React context for global state
-├── Functions/           # Utility functions (e.g., sync, time conversion)
-├── pages/               # Main UI views
-│   └── Index.js         # Core player view
-├── assets/              # Images and visual assets
-├── firebase-config.js   # Firebase setup
-└── App.js / main.jsx    # App entry point
+├── Components/          # Reusable components such as Sidebar and Player
+├── Context/             # Application-wide React Context for state management
+├── Functions/           # Utility functions for playback sync, formatting, etc.
+├── pages/               # Main pages like Homepage, Index, Search, Chat
+├── assets/              # Static assets and icons
+├── firebase-config.js   # Firebase integration file
+└── App.js / main.jsx    # Application entry point
 ```
 
 ---
 
-## 📈 Future Enhancements
+## Future Enhancements
 
-- 💬 Add real-time chat in each room
-- 📱 Mobile optimization for improved responsiveness
-- 🧑‍🤝‍🧑 Display profile pictures for all room members
-- 🗳️ Add room-wide song voting and playlist themes
-- 📥 Upload & sync local audio (non-YouTube content)
-- 🔐 Add user authentication with Firebase Auth
-- 💾 Save and load playlist queues from user profiles
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change. Follow conventional commit messages and clean code standards.
+- Real-time in-room chat functionality.
+- Full mobile responsiveness and optimization.
+- Display profile images for all room members.
+- Song voting system and themed playlists.
+- Support for syncing locally uploaded audio files.
+- Secure user authentication using Firebase Auth.
+- Playlist queue persistence linked to user accounts.
 
 ---
 
-## 📃 License
+## Contributing
 
-This project is open-source and available under the MIT License.
+Contributions are welcome. Please submit pull requests for improvements or bug fixes. For major changes, open an issue first to discuss your proposed solution. Follow clean code practices and conventional commit messages.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+```
+
