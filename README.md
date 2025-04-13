@@ -1,15 +1,4 @@
-Here's the **complete `README.md`** file for your **Kasette – YouTube Music Sync App**, with:
 
-- ✨ All features listed  
-- 🧱 Full tech stack including **Firebase Realtime Database**  
-- 🚀 Clean, professional formatting  
-- ❌ No live demo or author section  
-- 📌 Placeholders for screenshots and setup instructions  
-- 🌱 A section for future enhancements
-
----
-
-```markdown
 # 🎵 Kasette – YouTube Music Sync App
 
 **Kasette** is a real-time collaborative music sync web app that allows users to listen to YouTube music videos together in perfect sync. Whether you're miles apart or just want a virtual listening party, Kasette provides shared rooms, synchronized playback, queue management, and real-time chat for the ultimate group music experience.
